@@ -1,18 +1,27 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import styles from './styles';
+import Seperator from './Components/Seperator';
+import CustomHeader from './Components/CustomHeader';
+import PersonalInfo from './Components/PersonalInfo';
+import LogoutButton from './Components/LogoutButton';
+import {useDispatch, useSelector} from 'react-redux';
+import {logout} from '../../../store/reducers/authReducer';
 
 const ProfileScreen = () => {
-  const name = 'Muhammad Ahmad Ali';
+  const isLoggedIn = useSelector(state => state.rootReducer.auth.isLoggedIn);
+  const dispatch = useDispatch();
+  const logoutButtonPressed = () => {
+    dispatch(logout());
+    console.log(isLoggedIn);
+  };
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.nameView}>
-          <Text style={styles.nameText}>{name}</Text>
-        </View>
-      </View>
-      <View style={styles.personalInfoView}>
-        <Text>personalInfoView</Text>
+      <CustomHeader />
+      <Seperator />
+      <PersonalInfo />
+      <View style={styles.button}>
+        <LogoutButton onPress={logoutButtonPressed} />
       </View>
     </View>
   );

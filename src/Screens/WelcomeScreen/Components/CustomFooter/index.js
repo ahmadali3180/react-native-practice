@@ -2,11 +2,15 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {login} from '../../../../../store/reducers/authReducer';
+import GetStartedButton from '../GetStartedButton';
 
 const CustomFooter = () => {
   const isLoggedIn = useSelector(state => state.rootReducer.auth.isLoggedIn);
   console.log(isLoggedIn);
+
+  const dispatch = useDispatch();
 
   const navigation = useNavigation();
   // navigation functions
@@ -15,11 +19,7 @@ const CustomFooter = () => {
   };
 
   const navWithoutLogin = () => {
-    if (isLoggedIn) {
-      navigation.navigate('Root');
-    } else {
-      navigation.navigate('Root');
-    }
+    dispatch(login());
   };
 
   return (
@@ -32,6 +32,9 @@ const CustomFooter = () => {
       <Text style={styles.subTitle} onPress={navWithoutLogin}>
         Continue without logging in.
       </Text>
+      <View style={styles.getStartedButton}>
+        <GetStartedButton onPress={navToLogin} />
+      </View>
     </View>
   );
 };

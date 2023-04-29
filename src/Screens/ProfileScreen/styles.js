@@ -1,24 +1,15 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+const {height} = Dimensions.get('screen');
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
   },
-  header: {
-    flex: 1,
-    backgroundColor: 'dodgerblue',
-  },
-  personalInfoView: {
-    flex: 10,
-    backgroundColor: '#fff',
-  },
-  nameView: {
-    paddingLeft: 18,
-    paddingTop: 24,
-  },
-  nameText: {
-    fontSize: 22,
-    fontWeight: '600',
+  button: {
+    position: 'absolute',
+    alignSelf: 'center',
+    bottom: 0.175 * height,
   },
 });

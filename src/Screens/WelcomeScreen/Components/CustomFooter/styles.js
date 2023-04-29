@@ -1,4 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
+
+const {height, width} = Dimensions.get('screen');
 
 export default StyleSheet.create({
   footer: {
@@ -40,5 +42,11 @@ export default StyleSheet.create({
   signInText: {
     color: 'white',
     fontweight: 'bold',
+  },
+  getStartedButton: {
+    marginLeft: width * 0.5,
+    position: 'absolute',
+    alignSelf: 'auto',
+    bottom: 0.1 * height,
   },
 });
