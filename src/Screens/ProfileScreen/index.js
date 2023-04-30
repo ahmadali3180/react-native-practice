@@ -1,6 +1,7 @@
-import {View} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
 import Seperator from './Components/Seperator';
 import CustomHeader from './Components/CustomHeader';
 import PersonalInfo from './Components/PersonalInfo';
@@ -10,10 +11,19 @@ import {logout} from '../../../store/reducers/authReducer';
 
 const ProfileScreen = () => {
   const isLoggedIn = useSelector(state => state.rootReducer.auth.isLoggedIn);
+  console.log(isLoggedIn);
+
+  if (isLoggedIn) {
+    return <MainScreen />;
+  } else {
+    return <GoToLogin />;
+  }
+};
+
+const MainScreen = () => {
   const dispatch = useDispatch();
   const logoutButtonPressed = () => {
     dispatch(logout());
-    console.log(isLoggedIn);
   };
   return (
     <View style={styles.container}>
@@ -24,6 +34,18 @@ const ProfileScreen = () => {
         <LogoutButton onPress={logoutButtonPressed} />
       </View>
     </View>
+  );
+};
+
+const GoToLogin = () => {
+  const nav = useNavigation();
+  const goToLogin = () => {
+    nav.navigate('Login');
+  };
+  return (
+    <TouchableOpacity style={styles.seeAccInfoView} onPress={goToLogin}>
+      <Text style={styles.seeAccInfoText}>Login To See Your Profile</Text>
+    </TouchableOpacity>
   );
 };
 

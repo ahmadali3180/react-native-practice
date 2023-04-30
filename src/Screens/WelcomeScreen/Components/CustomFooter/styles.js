@@ -44,9 +44,9 @@ export default StyleSheet.create({
     fontweight: 'bold',
   },
   getStartedButton: {
-    marginLeft: width * 0.5,
+    marginLeft: width * 0.525,
     position: 'absolute',
-    alignSelf: 'auto',
-    bottom: 0.1 * height,
+    // bottom: 0.1 * height,
+    top: 0.3 * height,
   },
 });

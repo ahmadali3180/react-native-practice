@@ -12,4 +12,15 @@ export default StyleSheet.create({
     alignSelf: 'center',
     bottom: 0.175 * height,
   },
+  seeAccInfoView: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+  seeAccInfoText: {
+    color: '#007aff',
+    fontSize: 16,
+    fontWeight: '500',
+  },
 });

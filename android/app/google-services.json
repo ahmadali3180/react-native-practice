@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "346583868734",
+    "project_id": "redux-practice-app",
+    "storage_bucket": "redux-practice-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346583868734:android:9fb6a7591aa17d4070b86f",
+        "android_client_info": {
+          "package_name": "com.reduxapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346583868734-7iq7e9r63q26hlp28cg56pstpdlqmglk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reduxapp",
+            "certificate_hash": "77952542ba7b63bf2daa950f1a2ec8dac94ee02e"
+          }
+        },
+        {
+          "client_id": "346583868734-idruou90i709i21a1j4fla16m71llilm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWwgr4MkGH9GgEd33IXLONm1vKshDZLf0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346583868734-idruou90i709i21a1j4fla16m71llilm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "346583868734-1a1f5c3rvcg2o5oggjb63frvjor2392b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.reduxApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
